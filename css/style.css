@@ -15,10 +15,6 @@ span{
     cursor: pointer;
 }
 
-.hide{
-    display: none;
-}
-
 .sbarrato{
     text-decoration: line-through;
 }
