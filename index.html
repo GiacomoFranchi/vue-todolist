@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue To Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>BIANCA's To Do List</h1>
+    <div id="app">
+        <label for="send">INSERISCI QUI LE COSE DA FARE</label>
+        <input name="send" type="text" id="send" v-model="newText">
+        <button @click="prendiDaInput()">SEND</button>
+        <ul>
+                <li v-for="(compito, index) in todoArray">
+                    <div v-if="compito.attivo">
+                        <p>{{compito.todo}}</p>
+                        <span @click="togliDaRiga(index)">X</span>
+                    </div>
+                </li>
+        </ul>
+
+
+
+
+
+
+    </div>
+    <!--JS-->
+    <script src="js/script.js"></script>
+</body>
+</html>
