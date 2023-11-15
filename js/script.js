@@ -6,20 +6,24 @@ const app = createApp({
             todoArray:[
                 {
                     todo: "Fare colazione",
-                    attivo : true
+                    attivo : true,
+                    fatto: false
                 },
                 {
                     todo: "Lavare i denti",
-                    attivo : true
+                    attivo : true,
+                    fatto: false
                 },
                 {
                     todo: "Godersi un buon cartone",
-                    attivo : true
+                    attivo : true,
+                    fatto: false
                 }
             ],
             newTodo:{
                 todo: "",
                 attivo: true,
+                fatto: false
             }
         }
     },
@@ -27,10 +31,13 @@ const app = createApp({
         togliDaRiga: function(index){
             this.todoArray[index].attivo = false
         },
-        prendiDaInput: function(){
-            this.newTodo.todo = this.newText
+        prendiDaInput: function(newText){
+            this.newTodo.todo = newText
             this.newText = ""
-            this.todoArray.push(this.newTodo)
+            this.todoArray.push({...this.newTodo})
+        },
+        sbarra: function(index){
+            this.todoArray[index].fatto = true
         }
     }
 })

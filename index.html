@@ -12,11 +12,12 @@
     <div id="app">
         <label for="send">INSERISCI QUI LE COSE DA FARE</label>
         <input name="send" type="text" id="send" v-model="newText">
-        <button @click="prendiDaInput()">SEND</button>
+        <button @click="prendiDaInput(newText)">SEND</button>
         <ul>
                 <li v-for="(compito, index) in todoArray">
                     <div v-if="compito.attivo">
-                        <p>{{compito.todo}}</p>
+                        <p @click="sbarra(index)" :class="todoArray[index].fatto === true ? 'sbarrato' : '', todoArray[index].fatto === false ? '' : 'sbarrato' ">
+                            {{compito.todo}}</p>
                         <span @click="togliDaRiga(index)">X</span>
                     </div>
                 </li>
