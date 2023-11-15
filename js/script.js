@@ -30,6 +30,7 @@ const app = createApp({
     methods:{
         togliDaRiga: function(index){
             this.todoArray[index].attivo = false
+            .remove
         },
         prendiDaInput: function(newText){
             this.newTodo.todo = newText
