@@ -8,15 +8,15 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <h1>BIANCA's To Do List</h1>
+    <h1>Bianca's To Do List</h1>
     <div id="app">
         <label for="send">INSERISCI QUI LE COSE DA FARE:</label>
-        <input name="send" type="text" id="send" v-model="newText" @keyup.enter="prendiDaInput(newText)">
+        <input placeholder="Proprio qui" name="send" type="text" id="send" v-model="newText" @keyup.enter="prendiDaInput(newText)">
         <button @click="prendiDaInput(newText)">SEND</button>
         <ul>
             <li v-for="(compito, index) in todoArray">
                 <div v-if="compito.attivo">
-                    <p @click="sbarra(index)" :class="todoArray[index].fatto === true ? 'sbarrato' : '', todoArray[index].fatto === false ? '' : 'sbarrato'">
+                    <p @click="sbarra(index)" :class="todoArray[index].fatto === true ? 'sbarrato' : '', todoArray[index].fatto === false ? 'sbarrato' : ''">
                         {{compito.todo}}</p>
                     <span @click="togliDaRiga(index)">X</span>
                 </div>
